@@ -1,0 +1,17 @@
+{
+    "C_Cpp.intelliSenseEngine": "default",
+    "idf.espIdfPathWin": "d:\\Programming\\KRAI\\esp\\v5.4\\esp-idf",
+    "idf.pythonInstallPath": "d:\\Programming\\KRAI\\esp\\.espressif\\tools\\idf-python\\3.11.2\\python.exe",
+    "idf.openOcdConfigs": [
+        "board/esp32s3-builtin.cfg"
+    ],
+    "idf.portWin": "COM8",
+    "idf.toolsPathWin": "d:\\Programming\\KRAI\\esp\\.espressif",
+    "files.associations": {
+        "freertos.h": "c"
+    },
+    "idf.customExtraVars": {
+        "IDF_TARGET": "esp32s3"
+    },
+    "idf.flashType": "UART"
+}
