@@ -5,5 +5,8 @@
     "idf.openOcdConfigs": [
         "board/esp32s3-bridge.cfg"
     ],
-    "idf.toolsPathWin": "d:\\Programming\\KRAI\\esp\\.espressif"
+    "idf.toolsPathWin": "d:\\Programming\\KRAI\\esp\\.espressif",
+    "idf.customExtraVars": {
+        "IDF_TARGET": "esp32s3"
+    }
 }
