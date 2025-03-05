@@ -73,5 +73,5 @@ void Gpio::toggle() {
  */
 void Gpio::attachInterrupt(gpio_num_t gpio_pin, gpio_isr_t handler){
     gpio_install_isr_service(0);
-    gpio_isr_handler_add(gpio_pin, handler, (void*) GPIO_INPUT_IO_0);
+    gpio_isr_handler_add(gpio_pin, handler, NULL);
 }
