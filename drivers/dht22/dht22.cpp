@@ -13,7 +13,7 @@
 #include <esp_log.h>
 #include "driver/gpio.h"
 
-#include "dht22.h"
+#include "Dht22.h"
 
 static char TAG[] = "DHT";
 
