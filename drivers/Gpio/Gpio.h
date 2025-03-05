@@ -48,6 +48,12 @@ public:
      */
     void toggle() override;
 
+    /**
+     * @brief attach interrupt
+     * 
+     */
+    void attachInterrupt(gpio_num_t gpio_pin, gpio_isr_t handler);
+
 private:
     gpio_num_t pin_;          // GPIO pin number
     gpio_mode_t mode_;        // GPIO mode

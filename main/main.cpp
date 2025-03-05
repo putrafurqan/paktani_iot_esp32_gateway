@@ -12,7 +12,6 @@ Gpio led(GPIO_NUM_2, GPIO_MODE_OUTPUT);
 
 extern "C" void app_main(void)
 {
-
     led.init();
 
     while(1){

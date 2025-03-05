@@ -1,4 +1,4 @@
-set (SOURCES "Dht22.cpp")
+set (SOURCES "Wifi.cpp")
 
 idf_component_register(SRCS ${SOURCES}
                        INCLUDE_DIRS "."

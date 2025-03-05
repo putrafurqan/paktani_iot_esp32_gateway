@@ -1,4 +1,4 @@
-#include "i2c_tool.h"
+#include "I2cTool.h"
 #include "esp_log.h"
 
 #define I2CDEV_TIMEOUT 1000  // Timeout in milliseconds

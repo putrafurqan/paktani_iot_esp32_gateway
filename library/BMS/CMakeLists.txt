@@ -1,4 +1,4 @@
-set (SOURCES "Dht22.cpp")
+set (SOURCES "BMS.cpp")
 
 idf_component_register(SRCS ${SOURCES}
                        INCLUDE_DIRS "."
