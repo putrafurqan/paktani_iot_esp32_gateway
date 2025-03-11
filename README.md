@@ -129,13 +129,13 @@ The firmware is structured around three primary FreeRTOS tasks, each handling a 
 ## File Structure
 
 ```
-Paktani_IOT_ESP32_Gateway/
-├── components/
-│   ├── Wifi/            // Contains Wifi.h and Wifi.cpp
-│   ├── DS3231/          // Contains DS3231.h and DS3231.cpp
-│   ├── I2CMaster/       // Contains I2CMaster.h and I2CMaster.cpp
-│   ├── Modbus/          // Contains Modbus.h, Modbus.cpp, and ModbusRTU implementation
-│   └── Gpio/            // Contains Gpio.h and Gpio.cpp
+paktani_iot_esp32_gateway/
+├── library/
+│   ├── Wifi/            
+│   ├── DS3231/          
+│   ├── I2CMaster/       
+│   ├── Modbus/          
+│   └── Gpio/            
 ├── main/
 │   └── main.cpp         // Contains the application entry point and task implementations
 ├── CMakeLists.txt       // Build configuration for ESP-IDF
