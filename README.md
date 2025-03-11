@@ -130,7 +130,7 @@ The firmware is structured around three primary FreeRTOS tasks, each handling a 
 
 ```
 paktani_iot_esp32_gateway/
-├── library/
+├── drivers/
 │   ├── Wifi/            
 │   ├── DS3231/          
 │   ├── I2CMaster/       
