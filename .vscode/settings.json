@@ -8,5 +8,12 @@
     "idf.toolsPathWin": "d:\\Programming\\KRAI\\esp\\.espressif",
     "idf.customExtraVars": {
         "IDF_TARGET": "esp32s3"
+    },
+    "files.associations": {
+        "cstdint": "cpp",
+        "sdkconfig.h": "c",
+        "mbcontroller.h": "c",
+        "*.inc": "cpp",
+        "cstddef": "cpp"
     }
 }
