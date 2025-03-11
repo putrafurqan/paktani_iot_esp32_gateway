@@ -1,3 +1,7 @@
+/**
+ * @file ds3231.h
+ * @brief Real-time clock driver for the DS3231
+ */
 #ifndef MAIN_DS3231_H_
 #define MAIN_DS3231_H_
 
