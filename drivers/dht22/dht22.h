@@ -1,7 +1,7 @@
-/* 
-	DHT22 temperature sensor driver
-    Source : https://github.com/gosouth/DHT22
-*/
+/**
+ * @file dht22.h
+ * @brief 
+ */
 
 #ifndef DHT_HPP
 #define DHT_HPP
