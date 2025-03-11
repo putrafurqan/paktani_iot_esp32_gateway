@@ -151,8 +151,8 @@ Paktani_IOT_ESP32_Gateway/
 
 2. **Clone the Repository:**  
    ```bash
-   git clone https://your.repo.url/Paktani_IOT_ESP32_Gateway.git
-   cd Paktani_IOT_ESP32_Gateway
+   git clone git@github.com:putrafurqan/paktani_iot_esp32_gateway.git
+   cd paktani_iot_esp32_gateway
    ```
 
 3. **Configure the Project:**  
