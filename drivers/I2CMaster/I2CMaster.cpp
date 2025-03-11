@@ -1,11 +1,15 @@
-#include "I2cTool.h"
+#include "I2CMaster.h"
 #include "esp_log.h"
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "sdkconfig.h"
 
 #define I2CDEV_TIMEOUT 1000  // Timeout in milliseconds
 
-I2CTool::I2CTool(i2c_port_t port) : i2c_port(port) {}
+I2CMaster::I2CMaster(i2c_port_t port) : i2c_port(port) {}
 
-esp_err_t I2CTool::read(uint8_t addr, const void* out_data, size_t out_size, void* in_data, size_t in_size) {
+esp_err_t I2CMaster::read(uint8_t addr, const void* out_data, size_t out_size, void* in_data, size_t in_size) {
     if (!in_data || !in_size) return ESP_ERR_INVALID_ARG;
 
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
@@ -24,7 +28,7 @@ esp_err_t I2CTool::read(uint8_t addr, const void* out_data, size_t out_size, voi
     return res;
 }
 
-esp_err_t I2CTool::write(uint8_t addr, const void* out_reg, size_t out_reg_size, const void* out_data, size_t out_size) {
+esp_err_t I2CMaster::write(uint8_t addr, const void* out_reg, size_t out_reg_size, const void* out_data, size_t out_size) {
     if (!out_reg || !out_reg_size) return ESP_ERR_INVALID_ARG;
 
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();

@@ -1,4 +1,4 @@
-set (SOURCES "I2cTool.cpp")
+set (SOURCES "I2CMaster.cpp")
 
 idf_component_register(SRCS ${SOURCES}
                        INCLUDE_DIRS "."
