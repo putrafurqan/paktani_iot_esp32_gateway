@@ -1,44 +1,8 @@
 #include "Modbus.h"
 #include "esp_log.h"
-
+#include "modbus_params.h"
 static const char *TAG = "ModbusRTU";
 
-// Enumeration of all supported CIDs for device
-enum {
-    CID_DEV_NAME1 = 0,
-    CID_DEV_STATUS1,
-    CID_HUMIDITY_DATA_1,
-    CID_TEMP_DATA_1,
-    CID_DEV_NAME2,
-    CID_DEV_STATUS2,
-    CID_HUMIDITY_DATA_2,
-    CID_TEMP_DATA_2,
-    CID_DEV_NAME3,
-    CID_DEV_STATUS3,
-    CID_HUMIDITY_DATA_3,
-    CID_TEMP_DATA_3
-};
-
-/**
- * @brief Modbus function codes (commands) for master requests.
- */
-enum {
-    MB_FUNC_READ_COILS = 0x01,                  // Read Coils (0x01)
-    MB_FUNC_READ_DISCRETE_INPUTS = 0x02,        // Read Discrete Inputs (0x02)
-    MB_FUNC_READ_HOLDING_REGISTER = 0x03,       // Read Holding Registers (0x03)
-    MB_FUNC_READ_INPUT_REGISTER = 0x04,         // Read Input Registers (0x04)
-    MB_FUNC_WRITE_SINGLE_COIL = 0x05,           // Write Single Coil (0x05)
-    MB_FUNC_WRITE_SINGLE_REGISTER = 0x06,       // Write Single Register (0x06)
-    MB_FUNC_WRITE_MULTIPLE_COILS = 0x0F,        // Write Multiple Coils (0x0F)
-    MB_FUNC_WRITE_MULTIPLE_REGISTERS = 0x10,    // Write Multiple Registers (0x10)
-    MB_FUNC_READWRITE_MULTIPLE_REGISTERS = 0x17 // Read/Write Multiple Registers (0x17)
-};
-
-enum {
-    MB_DEVICE_ADDR1 = 1,
-    MB_DEVICE_ADDR2,
-    MB_DEVICE_ADDR3,
-};
 
 // Modbus parameter descriptors for three devices
 mb_parameter_descriptor_t device_parameters[] = {
@@ -75,6 +39,8 @@ mb_parameter_descriptor_t device_parameters[] = {
 
 // Calculate number of parameters in the table
 uint16_t num_device_parameters = (sizeof(device_parameters) / sizeof(device_parameters[0]));
+
+
 
 // The function to get pointer to parameter storage (instance) according to parameter description table
 void* ModbusRTU::masterGetParamData(const mb_parameter_descriptor_t* param_descriptor) {

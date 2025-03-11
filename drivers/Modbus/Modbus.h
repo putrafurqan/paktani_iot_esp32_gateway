@@ -1,3 +1,7 @@
+/**
+ * @file Modbus.h
+ * @brief 
+ */
 #pragma once
 
 #include "../../interface/ModbusInterface.h"
@@ -6,7 +10,6 @@
 
 #include "driver/uart.h"
 #include "mbcontroller.h"
-#include "modbus_params.h"
 
 #define MB_PORT_NUM     (CONFIG_MB_UART_PORT_NUM)   // Number of UART port used for Modbus connection
 #define MB_DEV_SPEED    (CONFIG_MB_UART_BAUD_RATE)  // The communication speed of the UART
@@ -39,6 +42,46 @@
 // Options can be used as bit masks or parameter limits
 #define OPTS(min_val, max_val, step_val) { .opt1 = min_val, .opt2 = max_val, .opt3 = step_val }
 
+
+// Enumeration of all supported CIDs for device
+enum {
+    CID_DEV_NAME1 = 0,
+    CID_DEV_STATUS1,
+    CID_HUMIDITY_DATA_1,
+    CID_TEMP_DATA_1,
+    CID_DEV_NAME2,
+    CID_DEV_STATUS2,
+    CID_HUMIDITY_DATA_2,
+    CID_TEMP_DATA_2,
+    CID_DEV_NAME3,
+    CID_DEV_STATUS3,
+    CID_HUMIDITY_DATA_3,
+    CID_TEMP_DATA_3
+};
+
+/**
+ * @brief Modbus function codes (commands) for master requests.
+ */
+enum {
+    MB_FUNC_READ_COILS = 0x01,                  // Read Coils (0x01)
+    MB_FUNC_READ_DISCRETE_INPUTS = 0x02,        // Read Discrete Inputs (0x02)
+    MB_FUNC_READ_HOLDING_REGISTER = 0x03,       // Read Holding Registers (0x03)
+    MB_FUNC_READ_INPUT_REGISTER = 0x04,         // Read Input Registers (0x04)
+    MB_FUNC_WRITE_SINGLE_COIL = 0x05,           // Write Single Coil (0x05)
+    MB_FUNC_WRITE_SINGLE_REGISTER = 0x06,       // Write Single Register (0x06)
+    MB_FUNC_WRITE_MULTIPLE_COILS = 0x0F,        // Write Multiple Coils (0x0F)
+    MB_FUNC_WRITE_MULTIPLE_REGISTERS = 0x10,    // Write Multiple Registers (0x10)
+    MB_FUNC_READWRITE_MULTIPLE_REGISTERS = 0x17 // Read/Write Multiple Registers (0x17)
+};
+
+enum {
+    MB_DEVICE_ADDR1 = 1,
+    MB_DEVICE_ADDR2,
+    MB_DEVICE_ADDR3,
+};
+
+
+extern mb_parameter_descriptor_t device_parameters[];
 
 class ModbusRTU : public ModbusInterface {
 private:
